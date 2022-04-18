@@ -8,13 +8,14 @@ module.exports = createLessonValdiator = (data) => {
   const firstDate = Joi.date();
   const days = Joi.array().items(Joi.number());
   const lessonsCount = Joi.number();
+  const teacherIds = Joi.array().items(Joi.string());
   const lastDate = Joi.date();
 
   if (!data.teacherIds) {
     return { error: { details: 'teachers ids not valid' } };
   } else {
     if (!Array.isArray(data.teacherIds)) {
-      return { error: { details: 'teachers ids not valid' } };
+      return { error: { details: 'teachers ids not valid should be array' } };
     }
 
     if (!data.teacherIds.every((el) => uuid.validate(el))) {
@@ -28,14 +29,16 @@ module.exports = createLessonValdiator = (data) => {
       firstDate: firstDate.required(),
       lessonsCount: lessonsCount.required(),
       days: days.required(),
-    }).options({ allowUnknown: true });
+      teacherIds: teacherIds.required(),
+    });
   } else if (data.lastDate) {
     schema = Joi.object({
       title: title.required(),
       firstDate: firstDate.required(),
       lastDate: lastDate.required(),
       days: days.required(),
-    }).options({ allowUnknown: true });
+      teacherIds: teacherIds.required(),
+    });
 
     const firstDateData = new Date(data.firstDate);
     const lastDateData = new Date(data.lastDate);
