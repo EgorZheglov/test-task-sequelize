@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "141be03a-d9b6-43e9-a0b6-10b5d2f1476a",
+		"name": "testTask CRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWEiLCJpYXQiOjE2NDYyMTcyNzksImV4cCI6MTY0NjIxNzMwOX0.L_OTAIUA5V_Pp9kFs_1F8YhDLOWzb0HKNegv53qUr4A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000?teacherIds=b457e0d9-e84d-4baf-80ec-f2d1af7d5ecd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"query": [
+						{
+							"key": "teacherIds",
+							"value": "b457e0d9-e84d-4baf-80ec-f2d1af7d5ecd"
+						},
+						{
+							"key": "status",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "lessonPerPage",
+							"value": "200",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2021-07-13,2021-07-17",
+							"disabled": true
+						},
+						{
+							"key": "studentsCount",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createLesson",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWEiLCJpYXQiOjE2NDYyMTg4NjMsImV4cCI6MTY0NjIxOTQ2M30.OBWHAFApiLLf3ido9xtPOFn9ixQDpBmdIf5_Xdi-GTUeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWEiLCJpYXQiOjE2NDYyMTg5OTcsImV4cCI6MTY0NjIxOTU5N30.r3U8sm7qXml8BolU1TP-qRPmtEj0ogYH-OrvjjwAmhM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"testLesson2222\",\r\n    \"firstDate\": \"2022-01-16\",\r\n    \"teacherIds\": [\r\n        \"b457e0d9-e84d-4baf-80ec-f2d1af7d5ecd\"\r\n    ],\r\n    \"days\": [\r\n        2\r\n    ],\r\n    \"lastDate\": \"2022-01-24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}
