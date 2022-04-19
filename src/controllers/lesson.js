@@ -139,18 +139,6 @@ async function createLesson(payload) {
     bulk.length = payload.lessonsCount;
   }
 
-  // const [err, result] = await to(
-  //   awaitsequelize.models.lesson.bulkCreate(bulk).then((lessons) => {
-  //     payload.teacherIds.forEach((teacherid) => {
-  //       const lessonsTeacherBulk = lessons.map((el) => {
-  //         return { lessonId: el.id, teacherId: teacherid };
-  //       });
-  //       sequelize.models.lesson_teachers.bulkCreate(lessonsTeacherBulk);
-  //     });
-  //     //Наверное, не самое лучшее решение, но с данной ORM - это мой первый опыт
-  //     return lessons.map((el) => el.id);
-  //   })
-  // );
   const [err, result] = await to(
     sequelize.models.lesson.bulkCreate(bulk).then(async (lessons) => {
       await payload.teacherIds.forEach(async (teacherid) => {

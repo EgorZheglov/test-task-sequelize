@@ -45,7 +45,7 @@ module.exports = createLessonValdiator = (data) => {
     const diffTime = Math.abs(lastDateData - firstDateData);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     if (diffDays > 365) {
-      return { error: { details: 'to big last date of lesson' } };
+      return { error: { details: 'invalid last date of lesson' } };
     }
   } else {
     return { error: { details: 'miss fields lessons count or lastDate' } };
