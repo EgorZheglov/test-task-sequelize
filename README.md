@@ -1,13 +1,14 @@
 # test task sequelize
 
-Text of test task
+Тестовое задавние
 https://disk.yandex.ru/i/3mUL9Uuq0wev7w
 
-database: Postgress.
-to run app:
+База данных: Postgres.
+Перед запуском предложения установите зависимости:
 `npm install`
-then
+Запуск приложения:
 `npm run dev`
 
-to seed database with random data run:
+Также для демонстрации был написан script для заполнения данных определенным количеством тестовой информации:
 `npm run seed`
+
