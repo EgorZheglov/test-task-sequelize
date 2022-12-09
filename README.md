@@ -1,4 +1,4 @@
-# test_Task_nodeJs_sequelize
+# test task sequelize
 
 Text of test task
 https://disk.yandex.ru/i/3mUL9Uuq0wev7w
